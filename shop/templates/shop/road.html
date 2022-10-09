@@ -1,0 +1,20 @@
+{% extends 'shop/base.html' %}
+
+
+{% block content %}
+<div style="margin-left: 30px;"><h2>Габардин FUHUA в пути 110 р/м</h2></div>
+<div id="main" class="product-list">
+    {% for g in gabardin %}
+    <div class="item">
+        <a href="{{ g.get_absolute_url }}">
+            <figure><img src="{{g.photo.url}}" width="285" height="285"
+                         title="{{g.color}}" alt="{{g.color}}">
+                <figcaption>Габардин {{g.title}} {{g.color}}</figcaption>
+                <figcaption>Остаток {{g.quantity}} метров</figcaption>
+                <figcaption>Цена {{g.price}} р/м</figcaption>
+            </figure>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

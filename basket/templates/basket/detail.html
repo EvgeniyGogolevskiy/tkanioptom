@@ -1,0 +1,54 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Корзина</h1>
+<table class="cart" border="1" width="80%">
+    <thead>
+    <tr>
+        <th></th>
+        <th>Цвет</th>
+        <th>Количество</th>
+        <th>Цена за метр</th>
+        <th>Стоимость</th>
+        <th>Удалить</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in basket %}
+    {% with gabardin=item.gabardin %}
+    <tr>
+        <td width="14%">
+            <a href="{{ gabardin.get_absolute_url }}">
+                <img src="{{ gabardin.photo.url }}" width="160" height="160">
+            </a>
+        </td>
+        <td>{{ gabardin.colour }}</td>
+        <td>{{ item.quantity }} метров</td>
+        <td class="num">{{ item.price }} руб</td>
+        <td class="num">{{ item.total_price }} руб</td>
+        <td><a href="{% url 'basket_remove' gabardin.id %}">Удалить</a></td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+    <tr class="total">
+        <td>Общая сумма</td>
+        <td colspan="3"></td>
+        <td class="num">{{ basket.get_total_price }} руб</td>
+    </tr>
+    </tbody>
+</table>
+<table width="80%">
+    <tr><td height="10"></td></tr>
+    <tr>
+        <td width="70%"></td>
+        <td>
+            <a href="{% url 'home' %}" class="button light">Продолжить покупки</a>
+        </td>
+        <td></td>
+        <td>
+            <a href="{% url 'order_create' %}" class="button">Оформить заказ</a>
+        </td>
+    </tr>
+</table>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Оформление заказа{% endblock %}
+
+{% block content %}
+<h1>Оформление заказа</h1>
+<div class="order-info">
+    <h3>Ваш заказ</h3>
+    <ul>
+        {% for item in basket %}
+        <li>
+            {{ item.quantity }} метров x <span>{{ item.price }} рублей</span>
+            {{ item.gabardin.colour }} {{item.gabardin.category}}
+        </li>
+        {% endfor %}
+    </ul>
+    <p>Общая сумма: {{ basket.get_total_price }} рублей</p>
+</div>
+<form action="." method="post" class="order-form">
+    {{ form.as_p }}
+    <div class="input">
+        <p><input type="submit" value="Оформить заказ"></p>
+    </div>
+    {% csrf_token %}
+</form>
+{% endblock %}

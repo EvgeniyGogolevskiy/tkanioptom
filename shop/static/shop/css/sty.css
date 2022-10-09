@@ -1,0 +1,177 @@
+html, body {
+	font-family: 'Arial';
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	color: #444;
+}
+
+a {
+	color: #0059b2;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #CC0000;
+	text-decoration: underline;
+}
+
+p {
+margin-left: 25px;
+}
+
+h2 {
+margin-left: 25px;
+}
+
+figure {
+border: 1px solid #ccc; /* рамка */
+background-color: #f1f0f0; /* цвет фона */
+padding: 5px; /* отступы от картинки */
+width: 320px;
+}
+
+figcaption {
+text-align: center; /* подпись по центру*/
+}
+
+.order-form {
+    float:left;
+}
+
+.product-list .item {
+    width:24%;
+    padding:10px 20px 10px 10;
+    float:left;
+    text-align:center;
+    line-height:1.2;
+}
+
+.product-list .item img {
+    width:90%;
+    margin-bottom:8px;
+}
+
+.product-detail {
+    margin-left: 15px;
+    text-align:justify;
+}
+
+.product-detail .price {
+    color:#333;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.product-detail img {
+    width:20%;
+    float:left;
+    padding:0 20px 20px 0;
+}
+
+.product-detail h1 {
+    margin-bottom:0;
+}
+
+.product-detail h2 {
+    margin-top:10px;
+}
+
+.order-form {
+    float:left;
+}
+
+.order-info {
+    float:right;
+    margin-right: 40%;
+    width:450px;
+    background:#efefef;
+    padding:10px 20px;
+    color:#333;
+    border-bottom:4px solid #5993bb;
+}
+
+
+.order-info ul li {
+    margin:0;
+    padding:10px;
+    font-size:14px;
+}
+
+.order-info p {
+    font-weight:bold;
+    float:right;
+}
+
+form div.field {
+    font-size:13px;
+    color:#666;
+    width:300px;
+    height:22px;
+    margin-bottom:10px;
+    padding:6px 12px;
+    border:0;
+    background:#efefef;
+    color:#666;
+    border-radius:4px;
+}
+
+a.button, input[type="submit"] {
+    margin-left: 30px;
+    margin-top: 20px;
+    color:#fff;
+    background:#5993bb;
+    border-radius:4px;
+    padding:10px 20px;
+    font-size:14px;
+    border:0;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	text-decoration: underline;
+}
+
+a.button.light {
+    color:#666;
+    background:#ededed;
+}
+
+.text-left {
+    text-align:left;
+}
+
+.text-right {
+    text-align:right;
+}
+
+form p label, form p input {
+    margin-left: 20px;
+    float:left;
+    clear:both;
+}
+
+form p label {
+    margin-top: 10px;
+    font-size:14px;
+    padding-bottom:4px;
+}
+
+form p input {
+    width:300px;
+    font-size:13px;
+    margin-bottom:10px;
+    padding:10px 12px;
+    border:0;
+    background:#efefef;
+    color:#666;
+    border-radius:4px;
+}
+
+.errorlist {
+float: bottom;
+color: #FF0000;
+}
+
+

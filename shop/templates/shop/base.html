@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{% static 'shop/images/ico.png' %}" type="image/x-icon"/>
+    <link type="text/css" href="{% static 'shop/css/sty.css' %}" rel="stylesheet"/>
+    <title>{{ title }}</title>
+</head>
+<body>
+{% block mainmenu %}
+<table width="100%">
+    <tr>
+        <td width="7%">
+            <a href="/"><img src="{% static 'shop/images/logo.png' %}" width="240" height="80"
+                             title="Логотип" alt="Логотип"></a>
+        </td>
+        <td width="7%">
+            <p>с 11-00 до 17-00</p>
+        </td>
+        <td width="7%">
+            <h4>+7 (812) 643-29-41</h4><h4>+7 (921) 352-26-70</h4>
+        </td>
+        <td width="2%"></td>
+        <td width="4%">
+            <a href="{% url 'info' %}">{{'Как купить'}}</a>
+        </td>
+        <td width="4%">
+            <a href="{% url 'contacts' %}">{{'Контакты'}}</a>
+        </td>
+        <td width="8%">
+            {% with total_items=basket|length %}
+            {% if basket|length > 0 %}
+            <a href="{% url 'basket_detail' %}"><img src="{% static 'shop/images/Корзина.png' %}" width="30" height="30"
+                                                     title="Корзина" alt="Корзина">
+                {{ basket.get_total_price }} руб.
+            </a>
+            {% else %}
+            <a href = "{% url 'basket_empty' %}">{{'Корзина пуста'}}</a>
+            {% endif %}
+            {% endwith %}
+        </td>
+
+    </tr>
+</table>
+<hr>
+{% endblock mainmenu %}
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

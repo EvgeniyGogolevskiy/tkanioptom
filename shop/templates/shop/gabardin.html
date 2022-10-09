@@ -1,0 +1,24 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+
+<div class="product-detail">
+    <h2>{{gabardin.color}} {{gabardin.category}} {{gabardin.quantity}} метров</h2>
+
+    {% if gabardin.photo %}
+    <p><img src="{{gabardin.photo.url}}" width="350" height="350"></p>
+    {% endif %}
+
+    <form action="{% url 'basket_add' gabardin.id %}" method="post">
+        {{ basket_gabardin_form }}
+        {% csrf_token %}
+        <input class="input" type="submit" value="Добавить в корзину">
+    </form>
+</div>
+
+<p>Габардин - плотная гладкокрашеная ткань полотняного переплетения. Обладает несминаемостью и износостойкостью,
+    вместе с тем на ощупь мягкий и легкий. Габардин очень практичный: легок в раскрое и шитье, образует мягкие
+    красивые драпировки и отлично держит форму изделия, прост в уходе. Материал имеет широкую область
+    применения - это и изготовление школьной формы, специально одежды, костюмов для офиса и службы, и для
+    изготовления декораций, и как ткань для штор.</p>
+{% endblock %}
